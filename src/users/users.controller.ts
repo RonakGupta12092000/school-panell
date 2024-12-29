@@ -3,6 +3,7 @@ import { Param } from '@nestjs/common';
 import { query } from 'express';
 import { Query } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { get } from 'http';
 
 @Controller('users')
 export class UsersController {
@@ -65,6 +66,16 @@ constructor(private readonly usersService: UsersService) {}
     
     return this.usersService.AddUserInDB(userdata);
  
-}
+  }
+  @Post('Adduseringetusers')
+  Adduseringetusers(@Param('username') username: string): string {
+    return this.usersService.Adduseringetusers(username);
+  }
+
+  @Get('getuserbyid/:id')
+
+  getUserById(@Param('id') id: number): string {
+    return this.usersService.getUserById(+id);
+  }
 
 }
