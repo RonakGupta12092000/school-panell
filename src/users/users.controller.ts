@@ -74,7 +74,7 @@ constructor(private readonly usersService: UsersService) {}
 
   @Get('getuserbyid/:id')
 
-  getUserById(@Param('id') id: number): string {
+  getUserById(@Param('id') id: number): string {  
     return this.usersService.getUserById(+id);
   }
 

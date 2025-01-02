@@ -79,4 +79,9 @@ export class UsersService {
         }
     }
 
+
+    AddStudent(): string {
+        return 'Student Added Successfully';
+    }
+
 }
